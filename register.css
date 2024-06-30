@@ -2,7 +2,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #b5eba0;
     color: #333;
     display: flex;
     justify-content: center;
@@ -42,10 +42,10 @@ button {
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
-    background: linear-gradient(135deg, #2ECC71, #27AE60);
+    background: linear-gradient(135deg, #922ecc, #8827ae);
     color: #fff;
 }
 
 button:hover {
-    background: linear-gradient(135deg, #27AE60, #2ECC71);
+    background: linear-gradient(135deg, #8e27ae, #8d2ecc);
 }

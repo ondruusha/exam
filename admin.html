@@ -1,44 +1,12 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Редактор операций</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-
-        .container {
-            width: 80%;
-            margin: auto;
-            padding: 20px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        th,
-        td {
-            border: 1px solid #ddd;
-            padding: 8px;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-
-        input,
-        button {
-            margin-top: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="admin.css">
 </head>
-
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 <body>
     <div class="container">
         <h1>Редактор операций</h1>
@@ -75,51 +43,6 @@
             </tbody>
         </table>
     </div>
-    <script>
-        const transactionsKey = 'transactions';
-
-        function loadTransactions() {
-            const transactions = JSON.parse(localStorage.getItem(transactionsKey)) || [];
-            const tableBody = document.querySelector('#transactionsTable tbody');
-            tableBody.innerHTML = '';
-            transactions.forEach((transaction, index) => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${transaction.transaction_id}</td>
-                    <td>${transaction.card_number}</td>
-                    <td>${transaction.atm_number}</td>
-                    <td>${transaction.date_time}</td>
-                    <td>${transaction.commission ? 'Да' : 'Нет'}</td>
-                    <td>${transaction.amount}</td>
-                    <td><button onclick="deleteTransaction(${index})">Удалить</button></td>
-                `;
-                tableBody.appendChild(row);
-            });
-        }
-
-        function addTransaction() {
-            const card_number = document.getElementById('card_number').value;
-            const atm_number = document.getElementById('atm_number').value;
-            const date_time = document.getElementById('date_time').value;
-            const commission = document.getElementById('commission').value === 'true';
-            const amount = document.getElementById('amount').value;
-
-            const transactions = JSON.parse(localStorage.getItem(transactionsKey)) || [];
-            const transaction_id = transactions.length > 0 ? transactions[transactions.length - 1].transaction_id + 1 : 1;
-            transactions.push({ transaction_id, card_number, atm_number, date_time, commission, amount });
-            localStorage.setItem(transactionsKey, JSON.stringify(transactions));
-            loadTransactions();
-        }
-
-        function deleteTransaction(index) {
-            const transactions = JSON.parse(localStorage.getItem(transactionsKey)) || [];
-            transactions.splice(index, 1);
-            localStorage.setItem(transactionsKey, JSON.stringify(transactions));
-            loadTransactions();
-        }
-
-        loadTransactions();
-    </script>
+    <script src="admin.js"></script>
 </body>
-
 </html>

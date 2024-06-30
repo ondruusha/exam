@@ -2,7 +2,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #b5eba0;
     color: #333;
     display: flex;
     justify-content: center;
@@ -44,21 +44,12 @@ button {
     transition: background-color 0.3s;
 }
 
-button:first-child {
-    background: linear-gradient(135deg, #007BFF, #0056b3);
-    color: #fff;
-}
-
-button:first-child:hover {
-    background: linear-gradient(135deg, #0056b3, #007BFF);
-}
-
 button:last-child {
     margin-top: 10px;
-    background: linear-gradient(135deg, #1f9e54, #27AE60);
+    background: linear-gradient(135deg, #922ecc, #8827ae);
     color: #fff;
 }
 
 button:last-child:hover {
-    background: linear-gradient(135deg, #1f9e54, #27AE60);
+    background: linear-gradient(135deg, #922ecc, #8827ae);
 }

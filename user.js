@@ -1,22 +1,21 @@
-function loadATMData() {
-    const atmData = JSON.parse(localStorage.getItem('atmData')) || [];
-    const tableBody = document.querySelector('#atmTable tbody');
-    tableBody.innerHTML = '';
+const transactionsKey = 'transactions';
 
-    atmData.forEach(atm => {
+function loadTransactions() {
+    const transactions = JSON.parse(localStorage.getItem(transactionsKey)) || [];
+    const tableBody = document.querySelector('#transactionsTable tbody');
+    tableBody.innerHTML = '';
+    transactions.forEach(transaction => {
         const row = document.createElement('tr');
         row.innerHTML = `
-            <td>${atm.id}</td>
-            <td>${atm.bankName}</td>
-            <td>${atm.location}</td>
-            <td>${atm.status}</td>
+            <td>${transaction.transaction_id}</td>
+            <td>${transaction.card_number}</td>
+            <td>${transaction.atm_number}</td>
+            <td>${transaction.date_time.replace('T', ' ')}</td>
+            <td>${transaction.commission ? 'Да' : 'Нет'}</td>
+            <td>${transaction.amount}</td>
         `;
         tableBody.appendChild(row);
     });
 }
 
-function logout() {
-    window.location.href = 'login.html';
-}
-
-document.addEventListener('DOMContentLoaded', loadATMData);
+loadTransactions();
