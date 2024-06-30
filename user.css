@@ -31,7 +31,8 @@ table {
     animation: fadeIn 1s ease-in-out;
 }
 
-th, td {
+th,
+td {
     border: 1px solid #ddd;
     padding: 12px;
     text-align: left;
@@ -54,6 +55,7 @@ tr:hover {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -64,6 +66,7 @@ tr:hover {
         transform: translateY(-100%);
         opacity: 0;
     }
+
     to {
         transform: translateY(0);
         opacity: 1;

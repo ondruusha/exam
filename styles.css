@@ -66,7 +66,6 @@ header nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Секция героя */
 #hero {
     background-image: url('hero-background.jpg');
     background-size: cover;
@@ -102,7 +101,6 @@ header nav ul li a:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Секции */
 section {
     padding: 50px 20px;
     text-align: center;
@@ -127,7 +125,6 @@ section ul li {
     margin-bottom: 10px;
 }
 
-/* Контакты */
 #contact address {
     font-style: normal;
 }
@@ -141,7 +138,6 @@ section ul li {
     text-decoration: underline;
 }
 
-/* Подвал */
 footer {
     background: linear-gradient(135deg, #333333, #444444);
     color: #FFFFFF;

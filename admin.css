@@ -34,7 +34,8 @@ label {
     color: #555;
 }
 
-input, select {
+input,
+select {
     margin-bottom: 15px;
     padding: 10px;
     border: 1px solid #ccc;
@@ -42,7 +43,8 @@ input, select {
     transition: border-color 0.3s ease-in-out;
 }
 
-input:focus, select:focus {
+input:focus,
+select:focus {
     border-color: #27AE60;
 }
 
@@ -63,7 +65,7 @@ button:hover {
     transform: scale(1.05);
 }
 
-button + button {
+button+button {
     margin-top: 10px;
 }
 
@@ -74,7 +76,8 @@ table {
     animation: fadeIn 1s ease-in-out;
 }
 
-th, td {
+th,
+td {
     border: 1px solid #ddd;
     padding: 8px;
     text-align: left;
@@ -88,6 +91,7 @@ th {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
