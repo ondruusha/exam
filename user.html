@@ -3,27 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Пользовательская страница</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>История операций</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .container { width: 80%; margin: auto; padding: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; }
+        th { background-color: #f2f2f2; }
+    </style>
 </head>
 <body>
-    <div class="user-panel">
-        <h2>Привет!</h2>
-        <table id="atmTable">
+    <div class="container">
+        <h1>История операций</h1>
+        <table id="transactionsTable">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Банк</th>
-                    <th>Место</th>
-                    <th>Статус</th>
+                    <th>ID операции</th>
+                    <th>Номер карты</th>
+                    <th>Номер банкомата</th>
+                    <th>Дата и время</th>
+                    <th>Комиссия</th>
+                    <th>Сумма</th>
                 </tr>
             </thead>
             <tbody>
-                <!-- Data will be loaded here -->
+                <!-- Данные будут загружены через JavaScript -->
             </tbody>
         </table>
-        <button onclick="logout()">Выйти</button>
     </div>
-    <script src="user.js"></script>
+    <script>
+        // Пример данных для отображения
+        const transactions = [
+            { transaction_id: 1, card_number: '1111-2222-3333-4444', atm_number: 12345, date_time: '2023-10-01 12:00:00', commission: 'Нет', amount: 1000 },
+            { transaction_id: 2, card_number: '5555-6666-7777-8888', atm_number: 67890, date_time: '2023-10-01 13:00:00', commission: 'Да', amount: 500 }
+        ];
+
+        const tableBody = document.querySelector('#transactionsTable tbody');
+        transactions.forEach(transaction => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${transaction.transaction_id}</td>
+                <td>${transaction.card_number}</td>
+                <td>${transaction.atm_number}</td>
+                <td>${transaction.date_time}</td>
+                <td>${transaction.commission}</td>
+                <td>${transaction.amount}</td>
+            `;
+            tableBody.appendChild(row);
+        });
+    </script>
 </body>
 </html>
