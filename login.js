@@ -13,7 +13,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
             window.location.href = 'user.html';
         }
     } else {
-        alert('Invalid credentials');
+        alert('Неверные данные.');
     }
 });
 
