@@ -28,7 +28,7 @@ document.getElementById('registerForm').addEventListener('submit', function(even
 
     users.push({ username: newUsername, password: newPassword, role: 'user' });
     localStorage.setItem('users', JSON.stringify(users));
-    alert('Registration successful. You can now login.');
+    alert('RРегистрация успешна. Вы можете авторизоваться.');
     showLoginForm();
 });
 
