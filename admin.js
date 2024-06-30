@@ -28,7 +28,7 @@ function editATM(id) {
     }
 }
 
-document.getElementById('editForm').addEventListener('submit', function(event) {
+document.getElementById('editForm').addEventListener('submit', function (event) {
     event.preventDefault();
     const id = parseInt(document.getElementById('editId').value);
     const bankName = document.getElementById('editBankName').value;

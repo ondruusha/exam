@@ -5,7 +5,7 @@ let atmData = JSON.parse(localStorage.getItem('atmData')) || [
     { id: 3, bankName: 'Bank C', location: 'City Z', status: 'Active' }
 ];
 
-document.getElementById('loginForm').addEventListener('submit', function(event) {
+document.getElementById('loginForm').addEventListener('submit', function (event) {
     event.preventDefault();
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
@@ -21,7 +21,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     }
 });
 
-document.getElementById('registerForm').addEventListener('submit', function(event) {
+document.getElementById('registerForm').addEventListener('submit', function (event) {
     event.preventDefault();
     const newUsername = document.getElementById('newUsername').value;
     const newPassword = document.getElementById('newPassword').value;
@@ -70,7 +70,7 @@ function editATM(id) {
     }
 }
 
-document.getElementById('editForm').addEventListener('submit', function(event) {
+document.getElementById('editForm').addEventListener('submit', function (event) {
     event.preventDefault();
     const id = parseInt(document.getElementById('editId').value);
     const bankName = document.getElementById('editBankName').value;
